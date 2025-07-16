@@ -1,0 +1,26 @@
+.todoItem {
+  display: flex;
+  width: 100%;
+  border: solid 1px;
+  border-radius: 0.5rem;
+}
+
+.todoItem-Completed {
+  text-decoration: line-through;
+}
+
+.todoItem-textContainer {
+  width: 70%;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.todoItem-btnContainer {
+  width: 30%;
+}
+.todoItem-btnContainer > button {
+  width: 50%;
+  height: 100%;
+  border-radius: 0%;
+  border-left: solid 1px;
+}

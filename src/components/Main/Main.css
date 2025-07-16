@@ -1,0 +1,7 @@
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /*Чтобы он занимал всё оствашееся место между header и footer*/
+  background-color: #7395ae;
+  padding: 1rem;
+}
