@@ -6,10 +6,11 @@ export default function AddTodoItemForm({ onAddTodoItem, ...props }) {
   const emptyForm = {
     title: "",
     description: "",
+    isFormValid: false,
   };
 
   const [form, setForm] = useState(emptyForm);
-  const [isFormValid, setIsFormValid] = useState(true);
+  // const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,12 @@ export default function AddTodoItemForm({ onAddTodoItem, ...props }) {
   };
 
   const handleChangeTitle = (e) => {
-    setIsFormValid(e.target.value.trim() === "" ? false : true);
+    setForm((value) => {
+      return {
+        ...value,
+        isFormValid: e.target.value.trim() === "" ? false : true,
+      };
+    });
 
     setForm((currentForm) => {
       return {
@@ -55,7 +61,7 @@ export default function AddTodoItemForm({ onAddTodoItem, ...props }) {
           id="TaskLabel"
           onChange={handleChangeTitle}
           value={form.title}
-          style={{ border: isFormValid ? null : "solid red 2px" }}
+          style={{ border: form.isFormValid ? null : "solid red 2px" }}
         />
         <textarea
           id="TaskDescription"
@@ -66,7 +72,7 @@ export default function AddTodoItemForm({ onAddTodoItem, ...props }) {
         />
       </div>
 
-      <Button className={"btnAddTodoItem"} disabled={!isFormValid}>
+      <Button className={"btnAddTodoItem"} disabled={!form.isFormValid}>
         Add
       </Button>
     </form>
