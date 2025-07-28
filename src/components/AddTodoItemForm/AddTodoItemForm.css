@@ -1,10 +1,10 @@
 #addTodoItemForm {
   display: flex;
   align-self: center;
-  min-width: 90%;
+  min-width: 100%;
   min-height: 10rem;
   border: solid 1px black;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem;
 }
 
 .addTodoItemForm-InputContainer {

@@ -3,3 +3,10 @@ button:disabled:hover {
   cursor: not-allowed;
   background-color: rgba(138, 142, 141, 0.624);
 }
+
+.addBtn {
+  background-color: green;
+  width: 5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
